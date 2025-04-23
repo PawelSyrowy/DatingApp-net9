@@ -1,5 +1,4 @@
-﻿using System.Security.Claims;
-using API.DTOs;
+﻿using API.DTOs;
 using API.Entities;
 using API.Extensions;
 using API.Interfaces;
@@ -11,8 +10,11 @@ using API.Helpers;
 namespace API.Controllers;
 
 [Authorize]
-public class UsersController(IUserRepository userRepository, IMapper mapper,
-    IPhotoService photoService) : BaseApiController
+public class UsersController(
+    IUserRepository userRepository, 
+    IMapper mapper,
+    IPhotoService photoService) 
+        : BaseApiController
 {
     [HttpGet]
     public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery] UserParams userParams)
