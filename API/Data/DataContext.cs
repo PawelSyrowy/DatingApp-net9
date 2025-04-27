@@ -5,20 +5,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Data;
 
-public class DataContext(DbContextOptions options)
-    : IdentityDbContext
-        <AppUser,
-        AppRole,
-        int,
-        IdentityUserClaim<int>,
-        AppUserRole,
-        IdentityUserLogin<int>,
-        IdentityRoleClaim<int>,
-        IdentityUserToken<int>>
-            (options)
+public class DataContext(DbContextOptions options) : IdentityDbContext<AppUser, AppRole, int,
+    IdentityUserClaim<int>, AppUserRole, IdentityUserLogin<int>, IdentityRoleClaim<int>,
+    IdentityUserToken<int>>(options)
 {
     public DbSet<UserLike> Likes { get; set; }
     public DbSet<Message> Messages { get; set; }
+    public DbSet<Group> Groups { get; set; }
+    public DbSet<Connection> Connections { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -35,7 +29,6 @@ public class DataContext(DbContextOptions options)
             .WithOne(u => u.Role)
             .HasForeignKey(ur => ur.RoleId)
             .IsRequired();
-
 
         builder.Entity<UserLike>()
             .HasKey(k => new { k.SourceUserId, k.TargetUserId });
