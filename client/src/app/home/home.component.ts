@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RegisterComponent } from '../register/register.component';
+import { AccountService } from '../_services/account.service';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +11,8 @@ import { RegisterComponent } from '../register/register.component';
   imports: [RegisterComponent],
 })
 export class HomeComponent {
+  accountService = inject(AccountService);
+  private router = inject(Router);
   registerMode = false;
 
   registerToggle() {
@@ -17,5 +21,13 @@ export class HomeComponent {
 
   cancelRegisterMode(event: boolean) {
     this.registerMode = event;
+  }
+
+  goTo(path: string)
+  {
+    if (!path.startsWith('/')) {
+      path = '/' + path;
+    }
+      this.router.navigateByUrl(path);
   }
 }

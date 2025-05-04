@@ -8,3 +8,28 @@ img {
   border: 2px solid white;
   display: inline;
 }
+
+.navbar-brand {
+  color: #5a2a75;
+}
+
+/* Default color for the navbar link */
+.nav-link {
+  color: #5a2a75; /* Default color */
+}
+
+/* Hover color for navbar link */
+.nav-link:hover {
+  color: #8e4d98; /* Lighter shade for hover */
+}
+
+/* Active link color (when it's the current page or selected) */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: #b1315f; /* Set the active link color to a pink shade */
+}
+
+/* For when the link is being clicked (actual click state) */
+.nav-link:active {
+  color: #9f2c61; /* Darker shade for the active (clicked) state */
+}
