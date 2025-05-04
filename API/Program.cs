@@ -44,3 +44,5 @@ catch (Exception ex)
 }
 
 app.Run();
+
+// ciąg dalszy kursu
