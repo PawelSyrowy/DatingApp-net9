@@ -27,6 +27,8 @@ img {
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
   color: #b1315f; /* Set the active link color to a pink shade */
+
+  font-weight: bold; /* Optional for extra clarity */
 }
 
 /* For when the link is being clicked (actual click state) */
