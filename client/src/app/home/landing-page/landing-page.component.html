@@ -1,0 +1,21 @@
+<div style="width:50%">
+    @if (!registerMode) {
+        <h1>Meet new and interesting people</h1>
+        <p class="lead">Find your perfect match easily & quickly</p>
+        <div class="text-center">
+            <button (click)="registerToggle()" class="btn btn-primary btn-lg me-2" 
+                style="border-radius: 40px; padding-left: 20px; padding-right: 20px;">Get Started</button>
+            <button class="btn btn-info btn-lg me-2">Learn more</button>
+        </div>
+    } @else {
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <app-new-register 
+                        (cancelRegister)="cancelRegisterMode($event)"
+                    ></app-new-register>
+                </div>
+            </div>
+        </div>
+    }
+</div>
