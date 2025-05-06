@@ -19,3 +19,12 @@ body {
   --bs-btn-disabled-bg: #b1315f; /* Disabled background color same as main */
   --bs-btn-disabled-border-color: #b1315f; /* Disabled border color same as main */
 }
+
+.form-check-input:checked[type="radio"] {
+  background-color: #b1315f; /* Main checked background */
+  border-color: #b1315f;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(177, 49, 95, 0.25); /* Focus ring */
+}

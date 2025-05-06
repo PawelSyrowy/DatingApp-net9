@@ -6,8 +6,20 @@
             <button (click)="registerToggle()" class="btn btn-primary btn-lg me-2" 
                 style="border-radius: 40px; padding-left: 20px; padding-right: 20px;">Get Started</button>
         </div>
+        @if (registerMode){
+
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <app-new-register 
+                            (cancelRegister)="cancelRegisterMode($event)"
+                        ></app-new-register>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-    <div class="welcome-image">
+    <div class="welcome-image" style="align-self: flex-start;">
         <div class="phone-mockup">
             <div class="avatar female"></div>
             <div class="avatar male"></div>
@@ -15,15 +27,3 @@
         </div>
     </div>
 </div>
-
-@if (registerMode){
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-4">
-                    <app-new-register 
-                        (cancelRegister)="cancelRegisterMode($event)"
-                    ></app-new-register>
-                </div>
-            </div>
-        </div>
-    }

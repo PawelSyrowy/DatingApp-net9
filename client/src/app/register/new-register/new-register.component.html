@@ -1,0 +1,100 @@
+<div class="signup-section">
+    <form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off" class="signup-form">
+        <h2>Sign up</h2>
+      
+        <app-text-input
+          [formControl]="$any(registerForm.controls['username'])"
+          [label]="'Username'"
+        >
+        </app-text-input>
+
+        <app-text-input
+        [formControl]="$any(registerForm.controls['knownAs'])"
+        [label]="'Known as'"
+      >
+      </app-text-input>
+      
+        <app-text-input
+          [formControl]="$any(registerForm.controls['password'])"
+          [label]="'Password'"
+          [type]="'password'"
+        >
+        </app-text-input>
+      
+        <app-text-input
+          [formControl]="$any(registerForm.controls['confirmPassword'])"
+          [label]="'Confirm password'"
+          [type]="'password'"
+        >
+        </app-text-input>
+
+        <app-date-picker
+        [formControl]="$any(registerForm.controls['dateOfBirth'])"
+        [label]="'Date of birth'"
+        [maxDate]="maxDate"
+      >
+      </app-date-picker>
+    
+    <app-text-input
+    [formControl]="$any(registerForm.controls['city'])"
+    [label]="'City'"
+      >
+      </app-text-input>
+  
+      <app-text-input
+      [formControl]="$any(registerForm.controls['country'])"
+      [label]="'Country'"
+      >
+      </app-text-input>
+
+      <div class="mb-3 d-flex align-items-center gender-select">
+        <label class="me-3 mb-0">I am a:</label>
+      
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            value="male"
+            formControlName="gender"
+            id="genderMale"
+          />
+          <label class="form-check-label" for="genderMale">Male</label>
+        </div>
+      
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            value="female"
+            formControlName="gender"
+            id="genderFemale"
+          />
+          <label class="form-check-label" for="genderFemale">Female</label>
+        </div>
+      </div>
+      
+        @if (validationErrors) {
+        <div class="alert alert-danger text-start">
+          <ul>
+            @for (error of validationErrors; track $index) {
+            <li>{{ error }}</li>
+            }
+          </ul>
+        </div>
+        }
+      
+        <div class="form-group text-center">
+          <button
+            [disabled]="!registerForm.valid"
+            class="btn btn-primary me-2"
+            type="submit"
+          >
+            Sign up
+          </button>
+          <button class="btn btn-primary me-2" (click)="cancel()" type="button">
+            Cancel
+          </button>
+        </div>
+      </form>    
+</div>
+  
