@@ -1,16 +1,20 @@
-.btn-info {
-    --bs-btn-color: #fff; /* White text color */
-    --bs-btn-bg: #b1315f; /* Main background color */
-    --bs-btn-border-color: #b1315f; /* Border color matching background */
-    --bs-btn-hover-color: #fff; /* White text color on hover */
-    --bs-btn-hover-bg: #9e2a52; /* A darker shade of #b1315f for hover background */
-    --bs-btn-hover-border-color: #891f4b; /* A darker shade for the border on hover */
-    --bs-btn-focus-shadow-rgb: 177, 49, 95; /* Slightly adjusted for focus shadow */
-    --bs-btn-active-color: #fff; /* White text color when button is active */
-    --bs-btn-active-bg: #891f4b; /* Darker shade for active button background */
-    --bs-btn-active-border-color: #701640; /* Darker shade for active border */
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); /* Active shadow */
-    --bs-btn-disabled-color: #fff; /* White text for disabled state */
-    --bs-btn-disabled-bg: #b1315f; /* Disabled background color same as main */
-    --bs-btn-disabled-border-color: #b1315f; /* Disabled border color same as main */
-  }
+body {
+  background-color: #ffeef1;
+}
+
+.btn-primary {
+  --bs-btn-color: #fff; /* White text color */
+  --bs-btn-bg: #b1315f; /* Main background color */
+  --bs-btn-border-color: #b1315f; /* Border color matching background */
+  --bs-btn-hover-color: #fff; /* White text color on hover */
+  --bs-btn-hover-bg: #9e2a52; /* A darker shade of #b1315f for hover background */
+  --bs-btn-hover-border-color: #891f4b; /* A darker shade for the border on hover */
+  --bs-btn-focus-shadow-rgb: 177, 49, 95; /* Slightly adjusted for focus shadow */
+  --bs-btn-active-color: #fff; /* White text color when button is active */
+  --bs-btn-active-bg: #891f4b; /* Darker shade for active button background */
+  --bs-btn-active-border-color: #701640; /* Darker shade for active border */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); /* Active shadow */
+  --bs-btn-disabled-color: #fff; /* White text for disabled state */
+  --bs-btn-disabled-bg: #b1315f; /* Disabled background color same as main */
+  --bs-btn-disabled-border-color: #b1315f; /* Disabled border color same as main */
+}
