@@ -1,29 +1,28 @@
 <div class="welcome">
-    <div class="welcome-content" style="text-align: left;">
+    <div class="welcome-content mt-5" style="text-align: left; align-self: flex-start;">
         <h1>Meet new and<br>interesting people</h1>
         <p class="lead">Find your perfect match easily & quickly</p>
         <div >
             <button (click)="registerToggle()" class="btn btn-primary btn-lg me-2" 
                 style="border-radius: 40px; padding-left: 20px; padding-right: 20px;">Get Started</button>
         </div>
+    </div>
+    <div class="welcome-content mt-5" style="height: 750px; width: 500px;">
         @if (registerMode){
-
-            <div class="container mt-5">
-                <div class="row">
-                    <div class="col-12">
-                        <app-new-register 
-                            (cancelRegister)="cancelRegisterMode($event)"
-                        ></app-new-register>
-                    </div>
+            <div class="row">
+                <div class="col-12">
+                    <app-new-register 
+                        (cancelRegister)="cancelRegisterMode($event)"
+                    ></app-new-register>
                 </div>
             </div>
         }
     </div>
-    <div class="welcome-image" style="align-self: flex-start;">
+    <!-- <div class="welcome-image" style="align-self: flex-start;">
         <div class="phone-mockup">
             <div class="avatar female"></div>
             <div class="avatar male"></div>
             <div class="hearts">❤️ ❤️ ❤️</div>
         </div>
-    </div>
+    </div> -->
 </div>
