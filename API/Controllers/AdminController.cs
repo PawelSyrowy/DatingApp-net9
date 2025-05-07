@@ -71,11 +71,13 @@ public class AdminController(
     {
         var photo = await unitOfWork.PhotoRepository.GetPhotoById(photoId);
 
-        if (photo == null) return NotFound();
+        if (photo == null) return BadRequest("Could not get photo from db");
 
         photo.IsApproved = true;
 
         var user = await unitOfWork.UserRepository.GetUserByPhotoId(photoId);
+
+        if (user == null) return BadRequest("Could not get user from db");
 
         if (!user.Photos.Any(x => x.IsMain)) photo.IsMain = true;
 
@@ -89,6 +91,8 @@ public class AdminController(
     public async Task<ActionResult> RejectPhoto(int photoId)
     {
         var photo = await unitOfWork.PhotoRepository.GetPhotoById(photoId);
+
+        if (photo == null) return BadRequest("Could not get photo from db");
 
         if (photo.PublicId != null)
         {
