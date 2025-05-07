@@ -28,3 +28,35 @@ body {
 .form-check-input:focus {
   box-shadow: 0 0 0 0.25rem rgba(177, 49, 95, 0.25); /* Focus ring */
 }
+
+.pagination {
+  --bs-pagination-padding-x: 0.75rem;
+  --bs-pagination-padding-y: 0.375rem;
+  --bs-pagination-font-size: 1rem;
+
+  --bs-pagination-color: #b1315f;
+  --bs-pagination-bg: #fff;
+  --bs-pagination-border-width: 1px;
+  --bs-pagination-border-color: #d8b9c3;
+  --bs-pagination-border-radius: 0.375rem;
+
+  --bs-pagination-hover-color: #b1315f;
+  --bs-pagination-hover-bg: #f8dce3;
+  --bs-pagination-hover-border-color: #d8b9c3;
+
+  --bs-pagination-focus-color: #b1315f;
+  --bs-pagination-focus-bg: #f3cdda;
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(177, 49, 95, 0.25);
+
+  --bs-pagination-active-color: #fff;
+  --bs-pagination-active-bg: #b1315f;
+  --bs-pagination-active-border-color: #b1315f;
+
+  --bs-pagination-disabled-color: #c197ab;
+  --bs-pagination-disabled-bg: #fceff2;
+  --bs-pagination-disabled-border-color: #e2cbd7;
+
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}

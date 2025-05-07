@@ -14,9 +14,9 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 })
 export class ListsComponent implements OnInit, OnDestroy {
   likesService = inject(LikesService);
-  predicate = 'liked';
+  predicate = 'mutual';
   pageNumber = 1;
-  pageSize = 5;
+  pageSize = 12;
 
   ngOnInit(): void {
     this.loadLikes();

@@ -7,6 +7,14 @@
     <div class="btn-group">
       <button
         class="btn btn-primary"
+        btnRadio="mutual"
+        [(ngModel)]="predicate"
+        (click)="loadLikes()"
+      >
+        Mutual
+      </button>
+      <button
+        class="btn btn-primary"
         btnRadio="liked"
         [(ngModel)]="predicate"
         (click)="loadLikes()"
@@ -20,14 +28,6 @@
         (click)="loadLikes()"
       >
         Members who like me
-      </button>
-      <button
-        class="btn btn-primary"
-        btnRadio="mutual"
-        [(ngModel)]="predicate"
-        (click)="loadLikes()"
-      >
-        Mutual
       </button>
     </div>
   </div>

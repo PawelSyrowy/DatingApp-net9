@@ -32,7 +32,7 @@ public class UserRepository(DataContext context, IMapper mapper) : IUserReposito
         var minDob = DateOnly.FromDateTime(DateTime.Today.AddYears(-userParams.MaxAge - 1));
         var maxDob = DateOnly.FromDateTime(DateTime.Today.AddYears(-userParams.MinAge));
 
-        query = query.Where(x => x.DateOfBirth >= minDob && x.DateOfBirth <= maxDob);
+        query = query.Where(x => x.DateOfBirth >= minDob && x.DateOfBirth <= maxDob && x.Photos.Any());
 
         query = userParams.OrderBy switch
         {

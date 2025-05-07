@@ -25,10 +25,6 @@ export class MemberListComponent implements OnInit {
     if (!this.memberService.paginatedResult()) this.loadMembers();
   }
 
-  loadMembers() {
-    this.memberService.getMembers();
-  }
-
   resetFilters() {
     this.memberService.resetUserParams();
     this.loadMembers();
@@ -39,5 +35,9 @@ export class MemberListComponent implements OnInit {
       this.memberService.userParams().pageNumber = event.page;
       this.loadMembers();
     }
+  }
+
+  loadMembers() {
+    this.memberService.getMembers();
   }
 }
