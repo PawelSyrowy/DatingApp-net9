@@ -53,10 +53,12 @@ public class LikesRepository(DataContext context, IMapper mapper) : ILikesReposi
                     .ProjectTo<MemberDto>(mapper.ConfigurationProvider);
                 break;
             default:
-                var likeIds = await GetCurrentUserLikeIds(likesParams.UserId);
-
                 query = likes
-                    .Where(x => x.TargetUserId == likesParams.UserId && likeIds.Contains(x.SourceUserId))
+                    .Where(x => x.TargetUserId == likesParams.UserId &&
+                                context.Likes
+                                    .Where(l => l.SourceUserId == likesParams.UserId)
+                                    .Select(l => l.TargetUserId)
+                                    .Contains(x.SourceUserId))
                     .Select(x => x.SourceUser)
                     .ProjectTo<MemberDto>(mapper.ConfigurationProvider);
                 break;
